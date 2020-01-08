@@ -77,8 +77,11 @@ echo "Installing Yarn"
 sleep 4
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt update
-sudo apt install --n-install-recommends yarn
+sudo apt update && sudo apt install yarn -y
+sudo apt update && sudo apt install --n-install-recommends yarn
+echo "Your yarn version"
+yarn --version
+echo
 echo
 echo "Setting source ~/.bashrc"
 echo "And install nodejs"
